@@ -10,7 +10,7 @@ then
 	if [ $1 = "install" ]
 		then
 			echo "install in progress"
-			./.install
+			$PATH_tools/setup/add
 	elif [ $1 = "uninstall" ]
 		then
 			echo "uninstall in progress"

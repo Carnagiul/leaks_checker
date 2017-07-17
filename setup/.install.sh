@@ -1,0 +1,8 @@
+#!/bin/bash
+PATH_tools=~/.42tools
+cat >> ~/.zshrc << EOF
+alias leaks_checker="$PATH_tools/leaks_checker/leaks_cheaker.sh"
+alias code_finder="$PATH_tools/code_finder/finder_str"
+alias leaks_checker="$PATH_tools/norminette_colored/norminette_colored"
+EOF
+exit

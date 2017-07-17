@@ -1,4 +1,23 @@
 #!/bin/bash
-echo "Bienvenue sur l'installation de project_checker.\n"
-echo "ce project va creer des alias temporaire pour la correction.\n"
-alias norme_color="/tmp/leaks_checker/norminette_colored/norminette_colored"
+PATH_tools=~/.42tools
+
+if [ ! -d $PATH_tools ]; then
+	git clone https://github.com/Carnagiul/leaks_checker.git $PATH_tools
+fi
+
+if [ $# -ge 1 ]
+then
+	if [ $1 = "install" ]
+		then
+			echo "install in progress"
+			./.install
+	elif [ $1 = "uninstall" ]
+		then
+			echo "uninstall in progress"
+			rm -rf $PATH_tools
+	else
+		echo "./install [install | uninstall]"
+	fi
+else
+	echo "./install [install | uninstall]"
+fi

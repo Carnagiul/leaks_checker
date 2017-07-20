@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ $# -ge 2 ]
+then
+	if [ $2 -ge 1 ]
+	then
+		norminette $1/**/**.[ch]
+	else
+		norminette $1/**/**.[ch] -R CheckForbiddenSourceHeader
+	fi
+elif [ $# -ge 1 ]
+then
+	norminette $1/**/**.[ch]
+else
+	echo "Usage: ./check.sh <folder>"
+fi
